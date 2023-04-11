@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Dịch văn bản</title>
+  </head>
+  <body>
+   <center>
+     <h1>Dịch văn bản</h1>
+    <form method="post" action="/translate">
+      <label for="source_text">Văn bản nguồn:</label>
+      <textarea name="source_text" id="source_text" required></textarea><br><br>
+      <label for="source_lang">Ngôn ngữ nguồn:</label>
+      <select name="source_lang" id="source_lang" required>
+        <option value="English">English</option>
+        <option value="Laos">Laos</option>
+        <option value="Vietnam">Vietnam</option>
+        <option value="Thailand">Thailand</option>
+        <!-- Add more options for supported languages -->
+      </select><br><br>
+      <label for="target_lang">Ngôn ngữ mục tiêu:</label>
+      <select name="target_lang" id="target_lang" required>
+        <option value="English">English</option>
+         <option value="Laos">Laos</option>
+        <option value="Vietnam">Vietnam</option>
+        <option value="Thailand">Thailand</option>
+        <!-- Add more options for supported languages -->
+      </select><br><br>
+      <input type="submit" value="Dịch">
+    </form>
+    {% if target_text %}
+      <h2>Kết quả:</h2>
+      <p><b>Văn bản nguồn:</b> {{ source_text }}</p>
+      <p><b>Văn bản đích:</b> {{ target_text }}</p>
+    {% endif %}
+  </center>
+  </body>
+</html>

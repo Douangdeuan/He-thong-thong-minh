@@ -9,13 +9,13 @@ def index():
     return render_template('index1.html')
 
 
-@app.route('/dịch', methods=['POST'])
+@app.route('/translate', methods=['POST'])
 def dịch():
     source_text = request.form['source_text']
     source_lang = request.form['source_lang']
     target_lang = request.form['target_lang']
 
-    openai.api_key = "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"
+    openai.api_key = "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"
     model_engine = "text-davinci-002"
 
     response = openai.Completion.create(
